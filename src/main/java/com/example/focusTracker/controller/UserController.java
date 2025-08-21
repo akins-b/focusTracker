@@ -29,12 +29,6 @@ public class UserController {
         return ResponseEntity.ok(service.login(request));
     }
 
-//    @PatchMapping("/edit-profile")
-//    public ResponseEntity<UserProfileResponse> editUserProfile(@RequestBody UpdateUserProfile request){
-//        UserProfileResponse updatedUser = service.editUserProfile(request);
-//        return ResponseEntity.ok(updatedUser);
-//    }
-
     @PatchMapping(value = "/edit-profile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<UserProfileResponse> editUserProfile(@ModelAttribute UpdateUserProfile request) {
         UserProfileResponse updatedUser = service.editUserProfile(request);

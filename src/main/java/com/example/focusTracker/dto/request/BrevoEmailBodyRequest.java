@@ -8,22 +8,21 @@ import java.util.List;
 @Data
 public class BrevoEmailBodyRequest {
     private Sender sender;
+    private List<Recipient> to;
     private String subject;
     private String htmlContent;
-    private List<Recipient> recipient;
-
 
     @Data
     @AllArgsConstructor
     public static class Sender {
-        String email;
-        String name;
+        private String email;
+        private String name;
     }
 
     @Data
     @AllArgsConstructor
-    public static class Recipient{
-        String email;
-        String name;
+    public static class Recipient {
+        private String email;
+        private String name;
     }
 }
